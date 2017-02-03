@@ -26,7 +26,7 @@ Android Studio and Webstorm
 
 .idea/
 
-devops-polytech.iml
+*.iml
 
 ## File-based project format:
 *.iws

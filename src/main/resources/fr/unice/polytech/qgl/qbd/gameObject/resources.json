@@ -1,0 +1,41 @@
+{
+  "primary":[
+    "FISH", "FLOWER", "FRUITS", "FUR", "ORE",
+    "QUARTZ", "SUGAR_CANE", "WOOD"
+  ],
+  "manufactured":{
+    "GLASS":{
+      "ingredients":{
+        "QUARTZ": 5,
+        "WOOD": 10
+      },
+      "QTY": 1
+    },
+    "INGOT":{
+      "ingredients":{
+        "ORE": 5,
+        "WOOD": 5
+      },
+      "QTY": 1
+    },
+    "LEATHER":{
+      "ingredients":{
+        "FUR": 3
+      },
+      "QTY": 1
+    },
+    "PLANK":{
+      "ingredients":{
+        "WOOD": 1
+      },
+      "QTY": 4
+    },
+    "RUM":{
+      "ingredients":{
+        "SUGAR_CANE": 10,
+        "FRUITS": 1
+      },
+      "QTY": 1
+    }
+  }
+}

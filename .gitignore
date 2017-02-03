@@ -24,9 +24,9 @@ hs_err_pid*
 Android Studio and Webstorm
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
-.idea/
+../.idea/
 
-*.iml
+devops-polytech.iml
 
 ## File-based project format:
 *.iws

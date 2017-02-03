@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: eu.ace-design:island-arena:1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/eu/ace-design/island-arena/1.0-SNAPSHOT/island-arena-1.0-20160804.193904-28.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/eu/ace-design/island-arena/1.0-SNAPSHOT/island-arena-1.0-20160804.193904-28-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/eu/ace-design/island-arena/1.0-SNAPSHOT/island-arena-1.0-20160804.193904-28-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

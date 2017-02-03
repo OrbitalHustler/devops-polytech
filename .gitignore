@@ -26,6 +26,8 @@ Android Studio and Webstorm
 
 .idea/
 
+*.iml
+
 ## File-based project format:
 *.iws
 

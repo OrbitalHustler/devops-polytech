@@ -35,6 +35,17 @@
             <name>Maven repository</name>
             <url>http://repo1.maven.org/maven2</url>
         </repository>
+
+        <repository>
+            <id>spoon</id>
+            <url>file:///${project.basedir}/../libs/spoon</url>
+        </repository>
+
+        <!--<repository>-->
+            <!--<id>spoonRewriter</id>-->
+            <!--<name>spoonRewriter</name>-->
+            <!--<url>file:///${project.basedir}/../spoon_rewriter</url>-->
+        <!--</repository>-->
     </repositories>
 
     <dependencies>
@@ -61,11 +72,11 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/fr.inria.gforge.spoon/spoon-core -->
         <dependency>
-            <groupId>spoonRewriter</groupId>
-            <artifactId>g8</artifactId>
-            <version>1.0</version>
-            <systemPath>${project.basedir}/src/main/resources/yourJar.jar</systemPath>
+            <groupId>fr.inria.gforge.spoon</groupId>
+            <artifactId>spoon-core</artifactId>
+            <version>5.5.0</version>
         </dependency>
 
     </dependencies>

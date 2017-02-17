@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>fr.unice.polytech.3a.qgl</groupId>
-    <artifactId>qbd</artifactId>
+    <artifactId>island</artifactId>
     <version>0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -35,36 +35,36 @@
             <name>Maven repository</name>
             <url>http://repo1.maven.org/maven2</url>
         </repository>
-
-        <repository>
-            <id>spoon</id>
-            <url>file:///${project.basedir}/../libs/spoon</url>
-        </repository>
-
-        <!--<repository>-->
-            <!--<id>spoonRewriter</id>-->
-            <!--<name>spoonRewriter</name>-->
-            <!--<url>file:///${project.basedir}/../spoon_rewriter</url>-->
-        <!--</repository>-->
     </repositories>
 
-    <dependencies>
+    <pluginRepositories>
+        <!-- required for JDT dependency -->
+        <pluginRepository>
+            <id>gforge.inria.fr-releases</id>
+            <name>Maven Repository for Spoon releases</name>
+            <url>http://spoon.gforge.inria.fr/repositories/releases/</url>
+        </pluginRepository>
+    </pluginRepositories>
 
+    <dependencies>
         <dependency>
             <groupId>eu.ace-design</groupId>
             <artifactId>island-runner</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
         <dependency>
             <groupId>eu.ace-design</groupId>
             <artifactId>island-player</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
             <version>20150729</version>
         </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -79,6 +79,18 @@
             <version>5.5.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>fr.unice.polytech.3a.qgl</groupId>
+            <artifactId>spoon_rewriter</artifactId>
+            <version>1.0</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>fr.inria.gforge.spoon</groupId>
+            <artifactId>spoon-maven-plugin</artifactId>
+            <version>2.4.1</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -93,19 +105,22 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <version>2.19.1</version>
+                <groupId>fr.inria.gforge.spoon</groupId>
+                <artifactId>spoon-maven-plugin</artifactId>
+                <version>2.4.1</version>
                 <executions>
                     <execution>
-                        <id>run-tests</id>
-                        <phase>integration-test</phase>
+                        <phase>generate-sources</phase>
                         <goals>
-                            <goal>integration-test</goal>
-                            <goal>verify</goal>
+                            <goal>generate</goal>
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <processors>
+                        <processor>spoonRewriter.Main.MinusToPlus</processor>
+                    </processors>
+                </configuration>
             </plugin>
         </plugins>
     </build>

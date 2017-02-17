@@ -1,7 +1,13 @@
 package fr.unice.polytech.qgl.qbd.behavior;
 
 import fr.unice.polytech.qgl.qbd.GameState;
+import fr.unice.polytech.qgl.qbd.actions.Action;
+import fr.unice.polytech.qgl.qbd.actions.ActionGenerator;
 import fr.unice.polytech.qgl.qbd.results.Result;
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 /**
  * Abstract class to extend from

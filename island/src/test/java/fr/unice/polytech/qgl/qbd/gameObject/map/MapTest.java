@@ -1,5 +1,21 @@
 package fr.unice.polytech.qgl.qbd.gameObject.map;
 
+import fr.unice.polytech.qgl.qbd.GameState;
+import fr.unice.polytech.qgl.qbd.actions.Action;
+import fr.unice.polytech.qgl.qbd.actions.EchoAction;
+import fr.unice.polytech.qgl.qbd.actions.ScanAction;
+import fr.unice.polytech.qgl.qbd.gameObject.Direction;
+import fr.unice.polytech.qgl.qbd.results.Result;
+import org.json.JSONObject;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import static org.junit.Assert.*;
+
 /**
  * PolyTech Nice / SI3 / Module POO-Java
  * Annee 2015 - qbd - Lab 3

@@ -1,6 +1,7 @@
 package fr.unice.polytech.qgl.qbd.stats;
 
 import fr.unice.polytech.qgl.qbd.exception.NoSingularResourceDatabaseFoundException;
+import fr.unice.polytech.qgl.qbd.gameObject.Direction;
 import fr.unice.polytech.qgl.qbd.gameObject.map.Resource;
 
 import java.util.ArrayList;

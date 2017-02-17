@@ -3,9 +3,9 @@
 	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>fr.unice.polytech.4a.qgl</groupId>
-  <artifactId>island-main</artifactId> <!-- CHANGE ME -->
-  <version>0.1-SNAPSHOT</version>
+  <groupId>devops</groupId>
+  <artifactId>main</artifactId>
+  <version>1.0</version>
   <packaging>pom</packaging>
   <!-- <packaging>jar</packaging> -->
 
@@ -17,10 +17,10 @@
 
   <modules>
     <module>
-      spoon_rewriter
+      island
     </module>
     <module>
-      island
+      spoon_rewriter
     </module>
   </modules>
 

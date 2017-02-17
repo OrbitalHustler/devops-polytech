@@ -1,5 +1,6 @@
 package fr.unice.polytech.qgl.qbd.gameObject.map;
 
+import fr.unice.polytech.qgl.qbd.actions.Action;
 import fr.unice.polytech.qgl.qbd.gameObject.Direction;
 import fr.unice.polytech.qgl.qbd.results.Result;
 

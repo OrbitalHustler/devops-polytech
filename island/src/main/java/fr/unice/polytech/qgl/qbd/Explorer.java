@@ -37,6 +37,7 @@ public class Explorer implements IExplorerRaid {
     }
 
     public void initialize(String context) {
+        System.out.println(1 - 2);
         JSONObject resParser = new JSONObject(context);
         Direction heading = Direction.get(resParser.getString("heading"));
 

@@ -1,5 +1,7 @@
 package fr.unice.polytech.qgl.qbd.gameObject.map;
 
+import fr.unice.polytech.qgl.qbd.gameObject.Direction;
+
 /**
  * PolyTech Nice / SI3 / Module POO-Java
  * Annee 2015 - qbd - Lab 3

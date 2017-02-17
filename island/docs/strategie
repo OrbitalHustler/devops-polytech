@@ -1,0 +1,34 @@
+Stratégie d’exploration – pseudo code
+En premier lieu il nous faut récupérer le contexte et initialiser nos objets
+Phase aérienne, objectif : trouver la taille de la carte, trouver une crique
+3 echos
+-	Soit on est dans un coin, on peut passer à l’objectif suivant
+-	Sinon on tourne dans la direction dont la range est la plus courte
+    o	Ensuite on vole jusqu’à range-1 ou si on trouve un OUT_OF_RANGE
+        	Faire des echos perpendiculaires pour avoir une forme de l’ile ?
+    o	Puis on tourne vers le heading initial
+    o	Un echo et on obtient la taille -2
+-	Initialisation de la map
+    o	Grace aux 2 tailles
+    o	+ tous les echos
+Trouver une crique :
+Aller jusqu’au centre de la carte
+-	Fly jusqu’à ce que position du drone = tailleMap/2
+-	Tourner vers le centre
+-	Fly jusqu’à la terre
+    o	1 Scan
+    o	Crique trouvé ? land phase terrestre
+    o	Sinon, Encore sur terre avec le dernier scan ?
+        •	Oui -> fly, scan
+        •	Non -> heading
+    o	Back to 1
+
+On a land sur une crique, on connait notre position.
+-	On est sur un biome qui contient une ressource de notre contrat ?
+    o	Oui : on vérifie qu’il reste des ressources
+        	Oui on exploite, on met à jour le nombre de ressources
+    o	Non : on avance
+-	On est dans l’océan/lac ? on tourne
+-	Contrats remplis ? on stop
+-	Budget restant <200 ? on stop
+

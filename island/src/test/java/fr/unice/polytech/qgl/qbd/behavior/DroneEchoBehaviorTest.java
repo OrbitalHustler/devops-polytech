@@ -1,13 +1,18 @@
 package fr.unice.polytech.qgl.qbd.behavior;
 
+import eu.ace_design.island.game.actions.Echo;
 import fr.unice.polytech.qgl.qbd.GameState;
 import fr.unice.polytech.qgl.qbd.actions.Action;
 import fr.unice.polytech.qgl.qbd.actions.EchoAction;
+import fr.unice.polytech.qgl.qbd.actions.FlyAction;
 import fr.unice.polytech.qgl.qbd.actions.HeadingAction;
 import fr.unice.polytech.qgl.qbd.driver.DroneDriver;
 import fr.unice.polytech.qgl.qbd.gameObject.Direction;
 import fr.unice.polytech.qgl.qbd.gameObject.map.Coords;
 import fr.unice.polytech.qgl.qbd.gameObject.map.DroneMap;
+import fr.unice.polytech.qgl.qbd.results.EchoResult;
+import fr.unice.polytech.qgl.qbd.results.FlyResult;
+import fr.unice.polytech.qgl.qbd.results.HeadingResult;
 import fr.unice.polytech.qgl.qbd.utils.ResultGenerator;
 import org.junit.Test;
 

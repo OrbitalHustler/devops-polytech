@@ -74,3 +74,5 @@ buildNumber.properties
 # End of https://www.gitignore.io/api/maven,jetbrains,java
 
 island/target/
+spoon_rewriter/target/
+generated/

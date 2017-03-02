@@ -6,9 +6,6 @@ import spoon.reflect.code.CtStatement;
 import spoon.reflect.declaration.CtElement;
 import spoon.support.reflect.code.CtIfImpl;
 
-/**
- * Created by user on 02/03/2017.
- */
 public class ConditionInverter  extends AbstractProcessor<CtElement> {
 
   public void process(CtElement element) {

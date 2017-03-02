@@ -113,7 +113,7 @@
                 </executions>
                 <configuration>
                     <processors>
-<processor>spoonRewriter.Main.Nothing</processor>
+<processor>spoonRewriter.Main.AddToVariables</processor>
                     </processors>
                 </configuration>
             </plugin>

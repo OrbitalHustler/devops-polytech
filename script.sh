@@ -7,8 +7,14 @@ rm -rf results/*
 mkdir generated results
 
 Class='spoonRewriter.Main.'
-Processors[0]='MinusToPlus'
-Processors[1]='Nothing'
+
+if [ "$#" -ne 0 ]; then
+    Processors[0]=$1
+else
+    Processors[0]='MinusToPlus'
+    Processors[1]='Nothing'
+    Processors[2]='AddToVariables'
+fi
 
 for p in "${Processors[@]}"
 do

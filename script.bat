@@ -3,6 +3,8 @@ cd %~dp0
 
 rmdir /Q /S generated
 mkdir generated
+rmdir /Q /S results
+mkdir results
 
 set "file=island\pom.xml"
 set "class=spoonRewriter.Main."
@@ -44,7 +46,13 @@ for %%p in (Nothing,MinusToPlus) do (
     xcopy island\target\generated-sources\spoon\fr generated\%%p\src\main\java\fr\ /E /Q > nul
     rmdir /Q /S island\target\generated-sources\spoon\fr\
 
-    @echo off
+    rem -> Generates tests reports
+    cd generated\%%p
+    call mvn surefire-report:report
+    copy target\site\surefire-report.html ..\..\results\%%p_result.html
+
+    cd ..
+    cd ..
 )
 
 goto :eof

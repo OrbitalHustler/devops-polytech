@@ -2,7 +2,9 @@
 
 cd `dirname $0`
 
-rm -rf generated results
+ls results
+rm -rf generated
+rm -rf results/*
 mkdir generated results
 
 Class='spoonRewriter.Main.'

@@ -113,7 +113,7 @@
                 </executions>
                 <configuration>
                     <processors>
-<processor>spoonRewriter.Main.AddToVariables</processor>
+<processor>spoonRewriter.Main.ConditionInverter</processor>
                     </processors>
                 </configuration>
             </plugin>

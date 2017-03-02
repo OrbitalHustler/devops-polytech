@@ -12,8 +12,9 @@ if [ "$#" -ne 0 ]; then
     Processors[0]=$1
 else
     Processors[0]='MinusToPlus'
-    Processors[1]='Nothing'
+    Processors[1]='OperatorsSwapper'
     Processors[2]='AddToVariables'
+    Processors[3]='ConditionInverter'
 fi
 
 for p in "${Processors[@]}"

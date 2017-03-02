@@ -2,8 +2,8 @@
 
 cd `dirname $0`
 
-rm -rf generated
-mkdir generated
+rm -rf generated results
+mkdir generated results
 
 Class='spoonRewriter.Main.'
 Processors[0]='MinusToPlus'
@@ -12,7 +12,6 @@ Processors[1]='Nothing'
 for p in "${Processors[@]}"
 do
     # cp dossier island dans generated/nomProcessor (rm src/main/java)
-    mkdir generated/$p
     mkdir -p generated/$p/src/main/java
     cp -r island/src/test generated/$p/src
     cp -r island/maps generated/$p
@@ -24,4 +23,9 @@ do
     mvn compile
     # mv les sources générées vers generated/nomProcessor/src/main/java
     mv island/target/generated-sources/spoon/fr generated/$p/src/main/java
+    # générer un rapport de test
+    cd generated/$p
+    mvn surefire-report:report
+    cp target/site/surefire-report.html ../../results/$p\_result.html
+    cd ../..
 done

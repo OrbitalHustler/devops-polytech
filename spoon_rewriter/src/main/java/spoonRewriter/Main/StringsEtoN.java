@@ -4,6 +4,7 @@ package spoonRewriter.Main;
 import spoon.processing.AbstractProcessor;
 import spoon.reflect.code.BinaryOperatorKind;
 import spoon.reflect.code.CtBinaryOperator;
+import spoon.reflect.code.CtVariableWrite;
 import spoon.reflect.declaration.CtElement;
 
 import java.util.Arrays;
@@ -30,8 +31,8 @@ public class StringsEtoN extends AbstractProcessor<CtElement> {
 //                }
 //            }
 //        }
-        if(element instanceof CtVariableWrite)
-            if (((CtBinaryOperator) element).getVariable() == //BinaryOperatorKind.MINUS)
-                ((CtBinaryOperator) element).setKind(BinaryOperatorKind.PLUS);
+//        if(element instanceof CtVariableWrite)
+//            if (((CtBinaryOperator) element).getVariable() == //BinaryOperatorKind.MINUS)
+//                ((CtBinaryOperator) element).setKind(BinaryOperatorKind.PLUS);
     }
 }

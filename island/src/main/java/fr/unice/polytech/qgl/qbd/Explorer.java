@@ -37,13 +37,6 @@ public class Explorer implements IExplorerRaid {
     }
 
     public void initialize(String context) {
-        //@TODO: DELETE
-        int a = 2*3 / 5;
-        if (true && true || true){
-
-        }
-
-
         System.out.println(1 - 2);
         JSONObject resParser = new JSONObject(context);
         Direction heading = Direction.get(resParser.getString("heading"));

@@ -2,7 +2,6 @@
 
 cd `dirname $0`
 
-ls results
 rm -rf generated
 rm -rf results/*
 mkdir generated results

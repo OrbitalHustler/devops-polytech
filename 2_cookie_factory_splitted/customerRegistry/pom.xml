@@ -15,10 +15,14 @@
         <versions.java>1.8</versions.java>
         <!-- J2E 7.x technological stack -->
         <versions.javaee>7.0-1</versions.javaee>
-        <versions.openejb>7.0.2</versions.openejb>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>fr.unice.polytech.isa</groupId>
+            <artifactId>exceptions</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa</groupId>
             <artifactId>entities</artifactId>
@@ -29,12 +33,6 @@
             <groupId>org.apache.tomee</groupId>
             <artifactId>javaee-api</artifactId>
             <version>${versions.javaee}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.tomee</groupId>
-            <artifactId>openejb-core</artifactId>
-            <version>${versions.openejb}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

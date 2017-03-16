@@ -4,7 +4,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>fr.unice.polytech.isa</groupId>
-    <artifactId>catalogue</artifactId>
+    <artifactId>customerCareService</artifactId>
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
 
@@ -20,7 +20,22 @@
     <dependencies>
         <dependency>
             <groupId>fr.unice.polytech.isa</groupId>
+            <artifactId>catalogue</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>fr.unice.polytech.isa</groupId>
+            <artifactId>customerRegistry</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>fr.unice.polytech.isa</groupId>
             <artifactId>entities</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>fr.unice.polytech.isa</groupId>
+            <artifactId>interfaces</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <!-- Dependencies for the OpenEJB framework (provided at runtime by the app server) -->

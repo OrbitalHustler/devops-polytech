@@ -15,7 +15,6 @@
         <versions.java>1.8</versions.java>
         <!-- J2E 7.x technological stack -->
         <versions.javaee>7.0-1</versions.javaee>
-        <versions.openejb>7.0.2</versions.openejb>
         <versions.openjpa>2.4.1</versions.openjpa>
     </properties>
 
@@ -25,12 +24,6 @@
             <groupId>org.apache.tomee</groupId>
             <artifactId>javaee-api</artifactId>
             <version>${versions.javaee}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.tomee</groupId>
-            <artifactId>openejb-core</artifactId>
-            <version>${versions.openejb}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

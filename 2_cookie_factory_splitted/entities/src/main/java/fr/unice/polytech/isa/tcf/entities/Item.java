@@ -1,5 +1,5 @@
 package fr.unice.polytech.isa.tcf.entities;
-// delete
+
 import javax.persistence.Embeddable;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;

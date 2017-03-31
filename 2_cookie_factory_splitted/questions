@@ -1,3 +1,0 @@
-cashierCartKitchen depend de utils et de exception, mais utils dépend aussi de exceptions => ?
-cartWebService utilise la fonctionnalité de Cart, mais dans le code Java aucun import à cette classe. Comment procéder
-dans le découpage?

@@ -4,8 +4,8 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>fr.unice.polytech.isa</groupId>
-    <artifactId>cashierCartKitchen</artifactId>
-    <packaging>jar</packaging>
+    <artifactId>tcf-backend</artifactId>
+    <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -14,21 +14,29 @@
         <versions.maven.compiler>3.6.1</versions.maven.compiler>
         <versions.java>1.8</versions.java>
         <versions.openjpa>2.4.1</versions.openjpa>
-        <versions.json>20160810</versions.json>
+        <versions.myface>2.2.10</versions.myface>
         <!-- J2E 7.x technological stack -->
         <versions.javaee>7.0-1</versions.javaee>
         <versions.openejb>7.0.2</versions.openejb>
+        <versions.maven.surefire>2.19.1</versions.maven.surefire>
+        <versions.openjpa>2.4.1</versions.openjpa>
+        <versions.tomee>7.0.2</versions.tomee>
         <versions.arquillian.junit>1.1.12.Final</versions.arquillian.junit>
         <versions.junit>4.12</versions.junit>
-        <versions.mockito>1.10.19</versions.mockito>
         <versions.tomee>7.0.2</versions.tomee>
         <versions.arquilian.jta>1.0.3.Final</versions.arquilian.jta>
+        <versions.cukespace>1.6.5</versions.cukespace>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>fr.unice.polytech.isa</groupId>
-            <artifactId>entities</artifactId>
+            <artifactId>customerCareService</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>fr.unice.polytech.isa</groupId>
+            <artifactId>cartWebService</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <!-- Dependencies for the OpenEJB framework (provided at runtime by the app server) -->
@@ -39,13 +47,8 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-            <version>${versions.json}</version>
-        </dependency>
-        <dependency>
             <groupId>org.apache.tomee</groupId>
-            <artifactId>openejb-cxf-rs</artifactId>
+            <artifactId>openejb-core</artifactId>
             <version>${versions.openejb}</version>
             <scope>provided</scope>
         </dependency>
@@ -73,14 +76,53 @@
             <version>${versions.openjpa}</version>
         </dependency>
         <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>${versions.mockito}</version>
+            <groupId>com.github.cukespace</groupId>
+            <artifactId>cukespace-core</artifactId>
+            <version>${versions.cukespace}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.myfaces.core</groupId>
+            <artifactId>myfaces-api</artifactId>
+            <version>${versions.myface}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
     <build>
+        <finalName>tcf-backend</finalName>
+        <defaultGoal>package</defaultGoal>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${versions.maven.surefire}</version>
+                <configuration>
+                    <forkMode>always</forkMode>
+                    <!-- otherwise openejb embedded and tomee embedded shares the same context and EJBContainer is broken -->
+                    <reuseForks>false</reuseForks>
+                    <excludes>
+                        <exclude>**/PaymentIntegrationTest.java</exclude>
+                        <exclude>features/*</exclude>
+                    </excludes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>integration-test</id>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>integration-test</phase>
+                        <configuration>
+                            <excludes>
+                                <exclude>**/*Test.java</exclude>
+                            </excludes>
+                            <includes>
+                                <include>**/PaymentIntegrationTest.java</include>
+                            </includes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -88,6 +130,17 @@
                 <configuration>
                     <source>${versions.java}</source>
                     <target>${versions.java}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.tomee.maven</groupId>
+                <artifactId>tomee-maven-plugin</artifactId>
+                <version>${versions.tomee}</version>
+                <configuration>
+                    <!-- From TomEE to TomEE+ to support the web services stack -->
+                    <tomeeClassifier>plus</tomeeClassifier>
+                    <args>-Xmx512m -XX:PermSize=256m</args>
+                    <deployOpenEjbApplication>true</deployOpenEjbApplication>
                 </configuration>
             </plugin>
         </plugins>

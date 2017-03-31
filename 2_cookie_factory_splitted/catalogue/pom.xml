@@ -13,8 +13,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <versions.maven.compiler>3.6.1</versions.maven.compiler>
         <versions.java>1.8</versions.java>
+        <versions.openjpa>2.4.1</versions.openjpa>
         <!-- J2E 7.x technological stack -->
         <versions.javaee>7.0-1</versions.javaee>
+        <versions.arquillian.junit>1.1.12.Final</versions.arquillian.junit>
+        <versions.junit>4.12</versions.junit>
+        <versions.tomee>7.0.2</versions.tomee>
+        <versions.arquilian.jta>1.0.3.Final</versions.arquilian.jta>
     </properties>
 
     <dependencies>
@@ -29,6 +34,29 @@
             <artifactId>javaee-api</artifactId>
             <version>${versions.javaee}</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${versions.junit}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.arquillian.junit</groupId>
+            <artifactId>arquillian-junit-container</artifactId>
+            <version>${versions.arquillian.junit}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomee</groupId>
+            <artifactId>arquillian-tomee-embedded</artifactId>
+            <version>${versions.tomee}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.openjpa</groupId>
+            <artifactId>openjpa</artifactId>
+            <version>${versions.openjpa}</version>
         </dependency>
     </dependencies>
     <build>

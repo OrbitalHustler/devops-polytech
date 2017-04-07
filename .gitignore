@@ -77,3 +77,4 @@ island/target/
 spoon_rewriter/target/
 generated/
 results/
+*.exe

@@ -1,0 +1,8 @@
+version: '3'
+services:
+  j2e:
+    build:
+      context: ./j2e
+    ports:
+      - "20000:20000"
+

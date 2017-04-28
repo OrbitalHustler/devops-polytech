@@ -1,7 +1,7 @@
 FROM mono:3.10.0
 
-RUN mkdir -p /opt/bank
-WORKDIR /opt/bank
-COPY bank.exe .
+COPY ./2_cookie_factory_splitted/dotNet/ /opt/bank/
+WORKDIR /opt/bank/
+RUN ./compile.sh
 
 ENTRYPOINT ["mono", "bank.exe"]
